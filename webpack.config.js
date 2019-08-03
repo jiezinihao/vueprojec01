@@ -11,6 +11,10 @@ module.exports = {
         new htmlWebpackPlugin({
             template: path.join(__dirname,'./src/index.html'),
             filename:'index.html'
+        }),
+        new htmlWebpackPlugin.ProvidePlugin({
+            $:"jquery",
+            jQuery:"jquery"
         })
     ],
     module:{
@@ -21,7 +25,8 @@ module.exports = {
             { test:/\.(jpg|png|gif|bmp|jpeg)$/,use: 'url-loader?limit=7000&name=[hash:8]-[name].[ext]'},
             { test:/\.(ttf|eot|svg|woff|woff2)$/,use: 'url-loader'},
             { test:/\.js$/, use: 'babel-loader', exclude:/node_modules/ },
-            { test:/\.vue$/,use: 'vue-loader'}
+            { test:/\.vue$/,use: 'vue-loader'},
+            {test:require.resolve('jquery'),loader:'expose-loader?$!expose-loader?jQuery'},
         ]
     },
     resolve:{

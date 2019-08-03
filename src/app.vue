@@ -1,47 +1,57 @@
 <template>
-    <div class="app-container">
-		//页面顶部
-        <mt-header fixed title="固定在顶部"></mt-header>
-        
+	<div id="container">
+		<div class="header">
+			<p>喵喵喵</p>
+		</div>
+		<div class="main">
+			<div class="login">
+				<router-link to="/register">注册</router-link>
+				<router-link to="/login">登录</router-link>
+				<router-view></router-view>
+			</div>
+		</div>
+		<div class="buttom">
 
-		//页面主要内容
-		<router-view></router-view>
-
-
-
-
-
-		<nav class="mui-bar mui-bar-tab">
-			<router-link class="mui-tab-item" to="/home">
-				<span class="mui-icon mui-icon-home"></span>
-				<span class="mui-tab-label">首页</span>
-			</router-link> 
-			<router-link class="mui-tab-item" to="#/member">
-				<span class="mui-icon mui-icon-email"></span>
-				<span class="mui-tab-label">会员</span>
-			</router-link> 
-			<router-link class="mui-tab-item" to="/shopcar">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart">
-					<span class="mui-badge">0</span>
-				</span>
-				
-				<span class="mui-tab-label">购物车</span>
-			</router-link> 
-			<router-link class="mui-tab-item" to="/search">
-				<span class="mui-icon mui-icon-gear"></span>
-				<span class="mui-tab-label">搜索</span>
-			</router-link> 
-		</nav>
-    </div>
+		</div>
+	</div>
 </template>
 
 <script>
-
+	
 </script>
 
 
-<style lang="scss" scoped>
-    .app-container{
-        padding-top:40px; 
-    }
+<style scoped>
+	#container{
+	}
+	#container .header{
+		height: 50px;
+		background-color: #eeeeee;
+	}
+	p{
+		text-align: center;
+		font-size: 25px;
+		color: violet;
+	}
+	.main{
+		height: 600px;
+		background-color: burlywood;
+	}
+	.buttom{
+		height: 75px;
+		background-color:darkslategray;
+	}
+	.main .login{
+		width: 200px;
+		height: 400px;
+		margin-top: 20px;
+		margin-left: 50px;
+		padding-left: 10px;
+		background-color: #D8BFD8;
+		/*float: left;*/
+	}
+	input{
+		height: 25px;
+		border: #D8BFD8;
+	}
 </style>
